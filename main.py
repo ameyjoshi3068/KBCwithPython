@@ -55,7 +55,10 @@ def prizeHandle(i):
         print(f"Congradulations!! Correct answer!\nYou have won {prizemoney[i]}Rs\n\n")
         return prizemoney[i],False
     elif ans=="End":
-        return prizemoney[i-1],True
+        if i==1:
+          return 0,True
+        else:
+          return prizemoney[i-1],True
     elif ans=="Invalid":
         print("Invalid option number\nEnter correct option number")
         prizeHandle(i)
